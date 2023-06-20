@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('datas_eventos', function (Blueprint $table) {
             $table->id();
+            $table->string('concepcao');
+            $table->string('croquis_desenhos');
+            $table->string('primeira_descricao');
+            $table->string('modelo_operacao');
+            $table->string('primeira_publicacao');
+            $table->string('primeira_apresentacao');
             $table->timestamps();
         });
     }

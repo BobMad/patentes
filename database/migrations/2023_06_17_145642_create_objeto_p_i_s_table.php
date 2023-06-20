@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('objeto_p_i_s', function (Blueprint $table) {
             $table->id();
+            $table->string('titulo');
+            $table->string('palavras_chave');
+            $table->string('campo_invencao');
+            $table->string('detalhe_invento');
+            $table->string('diario_laboratorio');
             $table->timestamps();
         });
     }

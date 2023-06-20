@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('representantes', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('rg');
+            $table->string('cpf');
+            $table->string('campus')->nullable();
+            $table->string('produto');
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Inventor extends Model
 {
@@ -16,7 +17,7 @@ class Inventor extends Model
         'identidade',
         'cpf',
         'qualificacao',
-        'endereco',
+//      'endereco',
         'instituicao',
         'vinculo_ifap',
         'matricula_ifap',
@@ -25,9 +26,14 @@ class Inventor extends Model
         'campus_ifap',
         'centro_ifap',
         'departamento',
-        'email',
-        'telefone',
-        'celular',
+//      'email',
+//      'telefone',
+//      'celular',
         'link_lattes',
     ];
+
+    public function endereco() : HasOne
+    {
+        return $this->hasOne(Endereco::class, 'inventor_id', 'id');
+    }
 }

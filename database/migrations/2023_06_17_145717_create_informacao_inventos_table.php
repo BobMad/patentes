@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('informacao_inventos', function (Blueprint $table) {
             $table->id();
+            $table->string('detalhe_invencao');
+            $table->string('resolucao_vantagem');
+            $table->string('comparacao');
+            $table->string('desvantagem_limitacao');
+            $table->string('uso_presente_futuro');
+            $table->string('estagio_comercializacao');
             $table->timestamps();
         });
     }

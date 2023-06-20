@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Representante extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nome',
+        'rg',
+        'cpf',
+        'campus',
+        'produto',
+    ];
 }

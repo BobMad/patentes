@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('antecedentes_invencaos', function (Blueprint $table) {
             $table->id();
+            $table->string('diferencial')->nullable();
+            $table->string('diferencial_patentes')->nullable();
+            $table->id();
             $table->timestamps();
         });
     }

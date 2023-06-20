@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('investimento_pesquisas', function (Blueprint $table) {
             $table->id();
+            $table->string('orgaos');
+            $table->string('contrato_termo');
+            $table->string('foi_informado');
+            $table->string('suporte_interno');
             $table->timestamps();
         });
     }

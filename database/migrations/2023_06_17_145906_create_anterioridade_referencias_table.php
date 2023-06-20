@@ -9,10 +9,40 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
+    /*
+     * 'outro_invento',
+        'patente_similar',
+        'relacao_bibliografica',
+        'detalhe_invento',
+        'protecao_propriedade_intelectual',
+        'descricao_outro_invento',
+        'revelada',
+        'outra_patente',
+        'revelado_industria',
+        'interesse_comercial',
+        'detalhes_revelada',
+        'detalhes_outra_patente',
+        'detalhes_interesse_comercial',
+
+    */
     public function up(): void
     {
         Schema::create('anterioridade_referencias', function (Blueprint $table) {
             $table->id();
+            $table->string('outro_invento');
+            $table->string('patente_similar');
+            $table->string('relacao_bibliografica');
+            $table->string('detalhe_invento');
+            $table->string('protecao_propriedade_intelectual');
+            $table->string('descricao_outro_invento');
+            $table->string('revelada');
+            $table->string('outra_patente');
+            $table->string('revelado_industrial');
+            $table->string('interesse_comercial');
+            $table->string('detalhe_revelada');
+            $table->string('detalhes_outra_patente');
+            $table->string('detalhes_interesse_comercial');
             $table->timestamps();
         });
     }

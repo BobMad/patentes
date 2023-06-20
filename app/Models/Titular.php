@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use function Termwind\renderUsing;
 
 class Titular extends Model
 {
@@ -12,8 +14,15 @@ class Titular extends Model
     protected $fillable = [
       'nome',
       'cnpj',
-      'email',
-      'telefone',
-      'endereco',  
+//    'email',
+//    'telefone',
+//    'endereco',
     ];
+
+    public function endereco() : HasOne
+    {
+        return $this->hasOne(Endereco::class,'titular_id', 'id');
+    }
 }
+
+

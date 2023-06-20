@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('transferencia_tecnologias', function (Blueprint $table) {
             $table->id();
+            $table->string('potencial_comercializacao');
+            $table->string('interesses');
             $table->timestamps();
         });
     }
