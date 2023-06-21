@@ -1,1 +1,8 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
+/*tema padrão bootstrap*/
+/*@import "bootstrap/dist/css/bootstrap.css";*/
+
+/*Tema escuro darkly*/
+@import "bootstrap/dist/darkly/bootstrap.css";
+
+/*tema flatly claro*/
+/*@import "bootstrap/dist/flatly/bootstrap.css";*/
