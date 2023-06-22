@@ -1,6 +1,9 @@
 <?php
 declare(strict_types=1);
 
+use App\Http\Controllers\EnderecoController;
+use App\Http\Controllers\InventorController;
+use App\Http\Controllers\TitutlarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('components.layout');
+    return view('home');
 });
+
+Route::resource('titulares', TitutlarController::class);
+Route::resource('titulares/{titular}/enderecos', EnderecoController::class);
+Route::resource('inventores', InventorController::class);
+Route::resource('inventores/{inventor}/enderecos', EnderecoController::class);

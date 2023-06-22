@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('diferencial')->nullable();
             $table->string('diferencial_patentes')->nullable();
-            $table->id();
             $table->timestamps();
         });
     }
