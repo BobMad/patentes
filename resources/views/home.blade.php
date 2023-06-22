@@ -1,7 +1,7 @@
 @extends('components.layout')
 
 @section('content')
-<h1 class="display-4 text-center">GFPI</h1>
+<h1 class="display-4 text-center pt-5">GFPI</h1>
 <p class="text-secondary text-light text-center">Texto adicional</p>
 <div class="text-center">
     <a href="{{route('titulares.create')}}"><button type="button" class="btn btn-primary btn-lg">Titular</button></a>
