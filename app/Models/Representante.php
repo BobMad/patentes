@@ -16,4 +16,9 @@ class Representante extends Model
         'campus',
         'produto',
     ];
+
+    public function pis()
+    {
+        return $this->hasMany(ObjetoPI::class,'representante_id', 'id');
+    }
 }

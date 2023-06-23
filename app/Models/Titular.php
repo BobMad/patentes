@@ -23,6 +23,11 @@ class Titular extends Model
     {
         return $this->hasOne(Endereco::class,'titular_id', 'id');
     }
+
+    public function pis()
+    {
+        return $this->hasMany(ObjetoPI::class, 'titular_id', 'id');
+    }
 }
 
 

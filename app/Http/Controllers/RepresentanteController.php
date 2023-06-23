@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Representante;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class RepresentanteController extends Controller
@@ -25,9 +29,11 @@ class RepresentanteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): View|Factory|Application
     {
-        //
+        $representante = Representante::create($request->all());
+
+        return view('/', compact('representante'));
     }
 
     /**
@@ -51,7 +57,9 @@ class RepresentanteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $representante = Representante::query()->find($id);
+        $representante->fill($request->all());
+        $representante->save();
     }
 
     /**

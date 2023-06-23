@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
@@ -52,16 +53,20 @@ class TitutlarController extends Controller
         $titular->endereco->save();
         $titular->save();*/
 
-        return to_route('titures.index');
+        return to_route('titulares.index');
       //return to_route('representantes.create');
     }
 
     /**
      * Display the specified resource.
+     * @param string $id
+     * @return View|Application|Factory
      */
-    public function show(string $id)
+    public function show(string $id): View|Application|Factory
     {
-        //
+        $titular = Titular::query()->find($id);
+
+        return view('titulares.show',compact('titular'));
     }
 
     /**
