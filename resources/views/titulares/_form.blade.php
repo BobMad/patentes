@@ -7,57 +7,55 @@
 
         <div class="form-group">
             <div class="form-floating mb-3">
-                <input type="text" id="nome" class="form-control" name="nome" placeholder="nome"
-                       required{{isset($titular) ? $titular->cnpj : old('cnpj')}}>
-                <label for="nome">Nome</label>
+                <input type="text" id="nome" class="form-control bg-light" name="nome" placeholder="{{$titular->nome ?? "Nome"}}"
+                       required>
+                <label for="nome" class="text-white">{{$titular->nome ?? "Nome"}}</label>
             </div>
         </div>
 
         <div class="form-group">
             <div class="form-floating mb-3">
-                <input type="text" id="cnpj" class="form-control" name="cnpj" placeholder="cnpj"
-                       required{{ isset($titular) ? $titular->cnpj : old('cnpj') }}>
-                <label for="nome">CNPJ</label>
+                <input type="text" id="cnpj" class="form-control bg-light" name="cnpj" placeholder="{{$titular->cnpj ?? "CNPJ"}}"
+                       required>
+                <label for="cnpj" class="text-white">{{$titular->cnpj ?? "CNPJ"}}</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-floating mb-3">
+                <input type="email" id="email" class="form-control bg-light" name="email" placeholder="{{$titular->endereco->email ?? "E-mail"}}"
+                       required>
+                <label for="email" class="text-white">{{$titular->endereco->email ?? "E-mail"}}</label>
             </div>
         </div>
 
         <div class="form-group">
             <div class="form-floating mb-3">
-                <input type="text" id="email" class="form-control" name="email" placeholder="email"
-                       required{{ isset($titular) ? $titular->email : old('email') }}>
-                <label for="nome">E-mail</label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="form-floating mb-3">
-                <input type="text" id="telefone" class="form-control" name="telefone" placeholder="telefone"
-                       required{{ isset($titular) ? $titular->telefone : old('telefone') }}>
-                <label for="nome">Telefone</label>
+                <input type="text" id="telefone" class="form-control bg-light" name="telefone" placeholder="{{$titular->endereco->telefone ?? "Telefone"}}"
+                       required>
+                <label for="telefone" class="text-white">{{$titular->endereco->telefone ?? "Telefone"}}</label>
             </div>
         </div>
 
         <div class="form-group d-inline-flex">
             <div class="form-floating mb-3">
-                <input type="text" id="cep" class="form-control" size="10" name="cep" placeholder="cep"
-                       required{{ isset($titular) ? $titular->cep : old('cep') }}>
-                <label for="nome">CEP</label>
+                <input type="text" id="cep" class="form-control bg-light" size="10" name="cep" placeholder="{{$titular->endereco->cep ?? "CEP"}}"
+                       required>
+                <label for="cep" class="text-white">{{$titular->endereco->cep ?? "CEP"}}</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" id="logradouro" class="form-control" size="80" name="logradouro"
-                       placeholder="logradouro"
-                       required{{ isset($titular) ? $titular->logradouro : old('logradouro') }}>
-                <label for="nome">Logradouro</label>
+                <input type="text" id="logradouro" class="form-control bg-light" size="80" name="logradouro" placeholder="{{$titular->endereco->logradouro ?? "Logradouro"}}"
+                       required>
+                <label for="logradouro" class="text-white">{{$titular->endereco->logradouro ?? "Logradouro"}}</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" id="numero" class="form-control" size="10" name="numero" placeholder="numero"
-                       required{{ isset($titular) ? $titular->numero : old('numero') }}>
-                <label for="nome">Número</label>
+                <input type="text" id="numero" class="form-control bg-light" size="10" name="numero" placeholder="{{$titular->endereco->numero ?? "Número"}}"
+                       required>
+                <label for="numero" class="text-white">{{$titular->endereco->numero ?? "Número"}}</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" id="bairro" class="form-control" size="42" name="bairro" placeholder="bairro"
-                       required{{ isset($titular) ? $titular->bairro : old('bairro') }}>
-                <label for="nome">Bairro</label>
+                <input type="text" id="bairro" class="form-control bg-light" size="42" name="bairro" placeholder="{{$titular->endereco->bairro ?? "Bairro"}}"
+                       required>
+                <label for="bairro" class="text-white">{{$titular->endereco->bairro ?? "Bairro"}}</label>
             </div>
         </div>
 

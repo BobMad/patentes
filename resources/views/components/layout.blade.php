@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Campo 1</a>
+                    <a class="nav-link" href="{{route('titulares.index')}}">Titulares</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Campo 2</a>
@@ -52,11 +52,11 @@
     </div>
 </nav>
 
-<div class="container-fluid container-xxl">
+<div class="container-fluid container-sm">
 
-    <div>
+
         @yield('content')
-    </div>
+
 
 </div>
 

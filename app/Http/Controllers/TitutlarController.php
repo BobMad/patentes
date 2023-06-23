@@ -9,6 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 
 class TitutlarController extends Controller
 {
@@ -36,6 +37,20 @@ class TitutlarController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $titular = Titular::create($request->all());
+        $titular->endereco()->create($request->all());
+        //$titular->endereco()->save();
+        $titular->save();
+
+        /*$titular = new Titular;
+        $titular->nome = $request->nome;
+        $titular->cnpj = $request->cnpj;
+        $titular->endereco->cep = $request->cep;
+        $titular->endereco->logradouro = $request->logradouro;
+        $titular->endereco->numero = $request->numero;
+        $titular->endereco->bairro = $request->bairro;
+        $titular->endereco->save();
+        $titular->save();*/
 
         return to_route('titulares.index');
     }
@@ -51,9 +66,10 @@ class TitutlarController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
     {
-        //
+        $titular = Titular::find($id);
+        return view('titulares.edit', compact('titular'));
     }
 
     /**
