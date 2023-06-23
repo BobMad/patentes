@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('inventor_id',)->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('titular_id',)->nullable()->constrained()->onDelete('cascade');
-            $table->string('cep');
-            $table->string('logradouro');
-            $table->string('numero');
-            $table->string('bairro');
+            $table->string('cep')->nullable();
+            $table->string('logradouro')->nullable();
+            $table->string('numero')->nullable();
+            $table->string('bairro')->nullable();
             $table->string('telefone')->nullable();
             $table->string('celular')->nullable();
             $table->string('email')->nullable();

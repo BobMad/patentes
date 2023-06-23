@@ -52,10 +52,18 @@
     </div>
 </nav>
 
-<div class="container-fluid container-sm">
-
-
+<div class="container-sm text-center">
+    <div class="row">
+    <div class="col-2">
+        Column
+    </div>
+    <div class="col">
         @yield('content')
+    </div>
+    <div class="col-2">
+        Column
+    </div>
+    </div>
 
 
 </div>

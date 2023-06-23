@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\EnderecoController;
 use App\Http\Controllers\InventorController;
+use App\Http\Controllers\ObjetoPIController;
 use App\Http\Controllers\RepresentanteController;
 use App\Http\Controllers\TitutlarController;
 use Illuminate\Support\Facades\Route;
@@ -27,4 +28,5 @@ Route::resource('titulares/{titular}/enderecos', EnderecoController::class);
 Route::resource('inventores', InventorController::class);
 Route::resource('inventores/{inventor}/enderecos', EnderecoController::class);
 Route::resource('representantes', RepresentanteController::class)->only('create', 'edit', 'store', 'update');
+Route::resource('objetoPIs', ObjetoPIController::class);
 

@@ -81,9 +81,23 @@ class TitutlarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Titular $titulare)
     {
-        //
+//        $titulare = $titular->id;
+
+        $titulare->fill($request->all());
+        $titulare->endereco()->update([
+            'titular_id' => $titulare->id,
+            'email' => $request->email,
+            'telefone' => $request->telefone,
+            'cep' => $request->cep,
+            'logradouro' => $request->logradouro,
+            'numero' => $request->numero,
+            'bairro' => $request->bairro,
+        ]);
+        $titulare->save();
+
+        return to_route('titulares.show', $titulare->id);
     }
 
     /**
