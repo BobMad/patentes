@@ -2,7 +2,9 @@
 @section('content')
     <h1 class="display-5 text-center pt-5">Titulares</h1>
 
-    <table class="table table-hover hover table-striped table-bordered">
+    <a href="{{route('titulares.create')}}"><button type="button" class="btn btn-primary btn-lg rounded-5">Novo Titular</button></a>
+
+    <table class="table table-hover hover table-striped">
         <thead>
         <tr>
             <th scope="col">Nome</th>

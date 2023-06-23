@@ -52,7 +52,8 @@ class TitutlarController extends Controller
         $titular->endereco->save();
         $titular->save();*/
 
-        return to_route('titulares.index');
+        return to_route('titures.index');
+      //return to_route('representantes.create');
     }
 
     /**
