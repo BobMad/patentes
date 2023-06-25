@@ -13,14 +13,18 @@ class AnterioridadeReferencias extends Model
         'outro_invento',
         'patente_similar',
         'relacao_bibliografica',
-        'detalhe_invento',
         'protecao_propriedade_intelectual',
+
+        'detalhe_invento',
+
         'descricao_outro_invento',
+
         'revelada',
         'outra_patente',
-        'revelado_industria',
+        'revelado_industrial',
         'interesse_comercial',
-        'detalhes_revelada',
+
+        'detalhe_revelada',
         'detalhes_outra_patente',
         'detalhes_interesse_comercial',
     ];

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('informacao_inventos', function (Blueprint $table) {
             $table->id();
-            $table->string('detalhe_invencao');
+            $table->string('detalhe_inovacao');
             $table->string('resolucao_vantagem');
             $table->string('comparacao');
             $table->string('desvantagem_limitacao');

@@ -7,6 +7,7 @@
 <div class="text-center">
     <a href="{{route('titulares.create')}}"><button type="button" class="btn btn-primary btn-lg">Titular</button></a>
     <a href="#"><button type="button" class="ms-4 btn btn-primary btn-lg">Inventor</button></a>
+    <a href="{{route('objetoPIs.create')}}"><button type="button" class="ms-4 btn btn-primary btn-lg">Objeto de PI</button></a>
 </div>
 
 @endsection

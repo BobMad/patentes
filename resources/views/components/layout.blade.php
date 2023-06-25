@@ -29,7 +29,7 @@
                     <a class="nav-link" href="{{route('titulares.index')}}">Titulares</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Campo 2</a>
+                    <a class="nav-link" href="{{route('objetoPIs.index')}}">Propriedades Intelectuais</a>
                 </li>
 
                 {{--<li class="nav-item dropdown">
@@ -52,7 +52,7 @@
     </div>
 </nav>
 
-<div class="container-sm text-center">
+<div class="container-md">
     <div class="row">
     <div class="col-2">
         Column
