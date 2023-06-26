@@ -7,9 +7,11 @@ use App\Http\Controllers\DatasEventoController;
 use App\Http\Controllers\EnderecoController;
 use App\Http\Controllers\InformacaoInventoController;
 use App\Http\Controllers\InventorController;
+use App\Http\Controllers\InvestimentoPesquisaController;
 use App\Http\Controllers\ObjetoPIController;
 use App\Http\Controllers\RepresentanteController;
 use App\Http\Controllers\TitutlarController;
+use App\Http\Controllers\TransferenciaTecnologiaController;
 use App\Models\InformacaoInvento;
 use Illuminate\Support\Facades\Route;
 
@@ -38,4 +40,6 @@ Route::resource('inventoInformacoes', InformacaoInventoController::class);
 Route::resource('antecedentesInvencao', AntecedentesInvencaoController::class);
 Route::resource('dataEventos', DatasEventoController::class);
 Route::resource('anterioridadeReferencias', AnterioridadeReferenciasController::class);
+Route::resource('investimentoPesquisas', InvestimentoPesquisaController::class);
+Route::resource('transferenciaTecnologias', TransferenciaTecnologiaController::class);
 

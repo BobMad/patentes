@@ -18,12 +18,11 @@ return new class extends Migration
             $table->string('outro_invento');
             $table->string('patente_similar');
             $table->string('relacao_bibliografica');
-            $table->string('detalhe_invento');
             $table->string('protecao_propriedade_intelectual');
             $table->string('descricao_outro_invento');
             $table->string('revelada');
             $table->string('outra_patente');
-            $table->string('revelado_industrial');
+            $table->string('revelado_industria');
             $table->string('interesse_comercial');
             $table->string('detalhe_revelada');
             $table->string('detalhes_outra_patente');

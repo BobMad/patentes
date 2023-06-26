@@ -20,7 +20,7 @@ class InventorController extends Controller
      */
     public function create()
     {
-        //
+        return view('inventores.create');
     }
 
     /**
@@ -28,7 +28,9 @@ class InventorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $info = Inventor::create($request->all());
+
+        return to_route('inventores.show',$info->id);
     }
 
     /**
@@ -36,7 +38,9 @@ class InventorController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $inventor = Inventor::query()->find($id);
+
+        return view('inventores.show', compact('inventor'));
     }
 
     /**

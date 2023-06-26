@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-md">
-        <a class="navbar-brand" href="#">GFPI</a>
+        <a class="me-5" href="/"><img class="" src="{{asset('images/logo/logo1.png')}}" width="90" height="45" alt="GFPI"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
                 aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,15 +21,15 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Home
-                        <span class="visually-hidden">(current)</span>
+                    <a class="nav-link active" href="/">HOME
+{{--                        <span class="visually-hidden">(current)</span>--}}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('titulares.index')}}">Titulares</a>
+                    <a class="nav-link text-white" href="{{route('objetoPIs.index')}}">PROPRIEDADES INTELECTUAIS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('objetoPIs.index')}}">Propriedades Intelectuais</a>
+                    <a class="nav-link" href="{{route('titulares.index')}}">Titulares</a>
                 </li>
 
                 {{--<li class="nav-item dropdown">
@@ -52,16 +52,16 @@
     </div>
 </nav>
 
-<div class="container-md">
+<div class="container container-fluid">
     <div class="row">
-    <div class="col-2">
-        Column
+    <div class="col-auto">
+        @yield('content-left')
     </div>
-    <div class="col">
+    <div class="col-7">
         @yield('content')
     </div>
-    <div class="col-2">
-        Column
+    <div class="col-auto">
+        @yield('content-right')
     </div>
     </div>
 

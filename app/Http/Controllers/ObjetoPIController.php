@@ -44,7 +44,9 @@ class ObjetoPIController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $objeto = ObjetoPI::query()->find($id);
+
+        return view('objetoPIs.show', compact('objeto'));
     }
 
     /**

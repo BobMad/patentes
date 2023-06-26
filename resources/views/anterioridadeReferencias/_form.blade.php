@@ -12,35 +12,33 @@
         <div class="input-group mb-3">
             <span class="col-form-label-lg bg-dark rounded-1 text-white col-lg-10 px-3" id="outro_invento">1. Conhece um outro invento com característica similar?</span>
             <input type="radio" class="btn-check col-lg-auto" name="outro_invento" id="outro_invento1"
-                   autocomplete="off" value="SIM" checked>
+                   autocomplete="off" value="Sim" checked>
             <label class="btn btn-outline-success rounded-1" for="outro_invento1">Sim</label>
 
             <input type="radio" class="btn-check col-lg-auto" name="outro_invento" id="outro_invento2"
-                   autocomplete="off" value="NÃO">
+                   autocomplete="off" value="Não">
             <label class="btn btn-outline-danger" for="outro_invento2">Não</label>
         </div>
 
         <div class="input-group mb-3">
             <span class="col-form-label-lg bg-dark rounded-1 text-white col-lg-10 px-3" id="patente_similar">2. Houve alguma patente depositada/requerida de um invento similar</span>
             <input type="radio" class="btn-check col-lg-auto" name="patente_similar" id="patente_similar1"
-                   autocomplete="off"
-                   checked>
+                   autocomplete="off" value="Sim" checked>
             <label class="btn btn-outline-success rounded-1" for="patente_similar1">Sim</label>
 
             <input type="radio" class="btn-check col-lg-auto" name="patente_similar" id="patente_similar2"
-                   autocomplete="off">
+                   autocomplete="off" value="Não">
             <label class="btn btn-outline-danger" for="patente_similar2">Não</label>
         </div>
 
         <div class="input-group mb-3">
             <span class="col-form-label-lg bg-dark rounded-1 text-white col-lg-10 px-3" id="relacao_bibliografica">3. Há pesquisa bibliográfica relacionada com o invento</span>
             <input type="radio" class="btn-check col-lg-auto" name="relacao_bibliografica" id="relacao_bibliografica1"
-                   autocomplete="off"
-                   checked>
+                   autocomplete="off" value="Sim" checked>
             <label class="btn btn-outline-success rounded-1" for="relacao_bibliografica1">Sim</label>
 
             <input type="radio" class="btn-check col-lg-auto" name="relacao_bibliografica" id="relacao_bibliografica2"
-                   autocomplete="off">
+                   autocomplete="off" value="Não">
             <label class="btn btn-outline-danger" for="relacao_bibliografica2">Não</label>
         </div>
 
@@ -48,13 +46,12 @@
             <span class="col-form-label-lg bg-dark rounded-1 text-white col-lg-10 px-3"
                   id="protecao_propriedade_intelectual">4. Há alguma proteção de propriedade intelectual aplicada a esta invenção?</span>
             <input type="radio" class="btn-check col-lg-auto" name="protecao_propriedade_intelectual"
-                   id="protecao_propriedade_intelectual1"
-                   autocomplete="off"
+                   id="protecao_propriedade_intelectual1" value="Sim" autocomplete="off"
                    checked>
             <label class="btn btn-outline-success rounded-1" for="protecao_propriedade_intelectual1">Sim</label>
 
             <input type="radio" class="btn-check col-lg-auto" name="protecao_propriedade_intelectual"
-                   id="protecao_propriedade_intelectual2" autocomplete="off">
+                   id="protecao_propriedade_intelectual2" autocomplete="off" value="Não">
             <label class="btn btn-outline-danger" for="protecao_propriedade_intelectual2">Não</label>
         </div>
 
@@ -96,38 +93,35 @@ ao presente invento, anexando, se possível, cópia:"}}"
         <div class="input-group mb-3">
             <span class="col-form-label-lg bg-dark rounded-1 text-white col-lg-10 px-3" id="revelada">1. A presente invenção já foi revelada fora do IFAP?</span>
             <input type="radio" class="btn-check col-lg-auto" name="revelada" id="revelada1"
-                   autocomplete="off"
-                   checked>
+                   autocomplete="off" value="Sim" checked>
             <label class="btn btn-outline-success rounded-1" for="revelada1">Sim</label>
 
             <input type="radio" class="btn-check col-lg-auto" name="revelada" id="revelada2"
-                   autocomplete="off">
+                   autocomplete="off" value="Não">
             <label class="btn btn-outline-danger" for="revelada2">Não</label>
         </div>
 
         <div class="input-group mb-3">
             <span class="col-form-label-lg bg-dark rounded-1 text-white col-lg-10 px-3" id="outra_patente">2. Esteve pessoalmente envolvido em outro processo de patente?r</span>
             <input type="radio" class="btn-check col-lg-auto" name="outra_patente" id="outra_patente1"
-                   autocomplete="off"
-                   checked>
+                   autocomplete="off" value="Sim" checked>
             <label class="btn btn-outline-success rounded-1" for="outra_patente1">Sim</label>
 
             <input type="radio" class="btn-check col-lg-auto" name="outra_patente" id="outra_patente2"
-                   autocomplete="off">
+                   autocomplete="off" value="Não">
             <label class="btn btn-outline-danger" for="outra_patente2">Não</label>
         </div>
 
         <div class="input-group mb-3">
-            <span class="col-form-label-lg bg-dark rounded-1 text-white col-lg-10 px-3" id="revelado_industrial">3. O presente invento já foi revelado à indústria?</span>
-            <input type="radio" class="btn-check col-lg-auto" name="revelado_industrial"
-                   id="revelado_industrial1"
-                   autocomplete="off"
+            <span class="col-form-label-lg bg-dark rounded-1 text-white col-lg-10 px-3" id="revelado_industria">3. O presente invento já foi revelado à indústria?</span>
+            <input type="radio" class="btn-check col-lg-auto" name="revelado_industria"
+                   id="revelado_industria1" value="Sim" autocomplete="off"
                    checked>
-            <label class="btn btn-outline-success rounded-1" for="revelado_industrial1">Sim</label>
+            <label class="btn btn-outline-success rounded-1" for="revelado_industria1">Sim</label>
 
-            <input type="radio" class="btn-check col-lg-auto" name="revelado_industrial"
-                   id="revelado_industrial2" autocomplete="off">
-            <label class="btn btn-outline-danger" for="revelado_industrial2">Não</label>
+            <input type="radio" class="btn-check col-lg-auto" name="revelado_industria"
+                   id="revelado_industria2" autocomplete="off" value="Não">
+            <label class="btn btn-outline-danger" for="revelado_industria2">Não</label>
         </div>
 
         <div class="input-group mb-3">
@@ -135,12 +129,11 @@ ao presente invento, anexando, se possível, cópia:"}}"
                       id="interesse_comercial">4. Foi demonstrado interesse comercial?</span>
             <input type="radio" class="btn-check col-lg-auto" name="interesse_comercial"
                    id="interesse_comercial1"
-                   autocomplete="off"
-                   checked>
+                   autocomplete="off" value="Sim" checked>
             <label class="btn btn-outline-success rounded-1" for="interesse_comercial1">Sim</label>
 
             <input type="radio" class="btn-check col-lg-auto" name="interesse_comercial"
-                   id="interesse_comercial2" autocomplete="off">
+                   id="interesse_comercial2" autocomplete="off" value="Não">
             <label class="btn btn-outline-danger" for="interesse_comercial2">Não</label>
         </div>
 
