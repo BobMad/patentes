@@ -17,4 +17,9 @@ class InformacaoInvento extends Model
         'uso_presente_futuro',
         'estagio_comercializacao',
     ];
+
+    public function objetoPI()
+    {
+        return $this->belongsTo(ObjetoPI::class, 'objetoPI_id');
+    }
 }

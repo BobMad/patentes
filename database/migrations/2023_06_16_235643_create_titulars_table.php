@@ -21,6 +21,7 @@ return new class extends Migration
     {
         Schema::create('titulars', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('objetoPI_id')->constrained('objeto_p_i_s')->onDelete('cascade');
             $table->string('nome');
             $table->string('cnpj');
             $table->timestamps();

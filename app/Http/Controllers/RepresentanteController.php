@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ObjetoPI;
 use App\Models\Representante;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -21,19 +22,20 @@ class RepresentanteController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(ObjetoPI $objeto)
     {
-        return view('representantes.create');
+        return view('representantes.create', compact('objeto'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): View|Factory|Application
+    public function store(ObjetoPI $objeto, Request $request): View|Factory|Application
     {
-        $representante = Representante::create($request->all());
+        $representante = $objeto->representante()->create($request->all());
+//        $representante = Representante::create($request->all());
 
-        return view('/', compact('representante'));
+        return view('objetoPIs.show', $representante->objetoPI_id);
     }
 
     /**

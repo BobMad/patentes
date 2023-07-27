@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Models\InvestimentoPesquisa;
+use App\Models\ObjetoPI;
 use Illuminate\Http\Request;
 
 class InvestimentoPesquisaController extends Controller
@@ -19,19 +20,19 @@ class InvestimentoPesquisaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(ObjetoPI $objeto)
     {
-        return view('investimentoPesquisas.create');
+        return view('investimentoPesquisas.create', compact('objeto'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ObjetoPI $objeto, Request $request)
     {
-        $info = InvestimentoPesquisa::create($request->all());
+        $info = $objeto->investimentos()->create($request->all());
 
-        return to_route('investimentoPesquisas.show', $info->id);
+        return to_route('objetoPIs.show', $info->objetoPI_id);
     }
 
     /**

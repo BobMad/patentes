@@ -1,5 +1,5 @@
 <div class="">
-    <form action="{{ isset($representante) ? route('representantes.update', $representante->id) : route('representantes.store') }}"
+    <form action="{{ isset($representante) ? route('representantes.update', $representante->id) : route('representantes.store', $objeto->id) }}"
           method="POST">
         @csrf
 

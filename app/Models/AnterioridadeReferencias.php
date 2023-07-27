@@ -26,4 +26,9 @@ class AnterioridadeReferencias extends Model
         'detalhes_outra_patente',
         'detalhes_interesse_comercial',
     ];
+
+    public function objetoPI()
+    {
+        return $this->belongsTo(ObjetoPI::class, 'objetoPI_id');
+    }
 }

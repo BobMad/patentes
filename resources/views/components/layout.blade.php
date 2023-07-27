@@ -29,7 +29,7 @@
                     <a class="nav-link text-white" href="{{route('objetoPIs.index')}}">PROPRIEDADES INTELECTUAIS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('titulares.index')}}">Titulares</a>
+                    <a class="nav-link" href="#">Titulares</a>
                 </li>
 
                 {{--<li class="nav-item dropdown">
@@ -52,15 +52,15 @@
     </div>
 </nav>
 
-<div class="container container-fluid">
-    <div class="row">
-    <div class="col-auto">
+<div class="container-sm">
+    <div class="row ">
+    <div class="col-auto ms-sm-3 me-sm-3">
         @yield('content-left')
     </div>
-    <div class="col-7">
+    <div class="col-7 ms-sm-3 me-sm-3">
         @yield('content')
     </div>
-    <div class="col-auto">
+    <div class="col-auto ms-sm-3 me-sm-3">
         @yield('content-right')
     </div>
     </div>

@@ -17,8 +17,8 @@ class Representante extends Model
         'produto',
     ];
 
-    public function pis()
+    public function objetoPI()
     {
-        return $this->hasMany(ObjetoPI::class,'representante_id', 'id');
+        return $this->belongsTo(ObjetoPI::class,'objetoPI_id');
     }
 }

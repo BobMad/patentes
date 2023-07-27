@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Models\Endereco;
+use App\Models\ObjetoPI;
 use App\Models\Titular;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -28,19 +29,19 @@ class TitutlarController extends Controller
      * Show the form for creating a new resource.
      * @return Factory|View|Application
      */
-    public function create(): Factory|View|Application
+    public function create(ObjetoPI $objeto): Factory|View|Application
     {
-        return view('titulares.create');
+        return view('titulares.create', compact('objeto'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(ObjetoPI $objeto, Request $request): RedirectResponse
     {
-        $titular = Titular::create($request->all());
+        $titular = $objeto->titulares()->create($request->all());
+//        $titular = Titular::create($request->all());
         $titular->endereco()->create($request->all());
-        //$titular->endereco()->save();
         $titular->save();
 
         /*$titular = new Titular;
@@ -53,7 +54,7 @@ class TitutlarController extends Controller
         $titular->endereco->save();
         $titular->save();*/
 
-        return to_route('titulares.index');
+        return to_route('objetoPIs.show', $titular->objetoPI_id);
       //return to_route('representantes.create');
     }
 

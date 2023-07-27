@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('inventors', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('objetoPI_id')->constrained('objeto_p_i_s')->onDelete('cascade');
             $table->string('nome');
             $table->string('sexo');
             $table->string('data_nascimento');

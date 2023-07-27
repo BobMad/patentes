@@ -1,6 +1,6 @@
 
     <form
-        action="{{ isset($info) ? route('inventoInformacoes.update', $info->id) : route('inventoInformacoes.store') }}"
+        action="{{ isset($info) ? route('inventoInformacoes.update', $info->id) : route('inventoInformacoes.store', $objeto->id) }}"
         method="POST">
         @csrf
 

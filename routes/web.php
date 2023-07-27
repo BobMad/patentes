@@ -30,16 +30,16 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resource('titulares', TitutlarController::class);
+Route::resource('objetoPiS/{objeto}/titulares', TitutlarController::class);
 Route::resource('titulares/{titular}/enderecos', EnderecoController::class);
-Route::resource('inventores', InventorController::class);
+Route::resource('objetoPiS/{objeto}/inventores', InventorController::class);
 Route::resource('inventores/{inventor}/enderecos', EnderecoController::class);
-Route::resource('representantes', RepresentanteController::class)->only('create', 'edit', 'store', 'update');
+Route::resource('objetoPiS/{objeto}/representantes', RepresentanteController::class)->only('create', 'edit', 'store', 'update');
 Route::resource('objetoPIs', ObjetoPIController::class);
-Route::resource('inventoInformacoes', InformacaoInventoController::class);
-Route::resource('antecedentesInvencao', AntecedentesInvencaoController::class);
-Route::resource('dataEventos', DatasEventoController::class);
-Route::resource('anterioridadeReferencias', AnterioridadeReferenciasController::class);
-Route::resource('investimentoPesquisas', InvestimentoPesquisaController::class);
-Route::resource('transferenciaTecnologias', TransferenciaTecnologiaController::class);
+Route::resource('objetoPiS/{objeto}/inventoInformacoes', InformacaoInventoController::class);
+Route::resource('objetoPiS/{objeto}/antecedentesInvencao', AntecedentesInvencaoController::class);
+Route::resource('objetoPiS/{objeto}/dataEventos', DatasEventoController::class);
+Route::resource('objetoPiS/{objeto}/anterioridadeReferencias', AnterioridadeReferenciasController::class);
+Route::resource('objetoPiS/{objeto}/investimentoPesquisas', InvestimentoPesquisaController::class);
+Route::resource('objetoPiS/{objeto}/transferenciaTecnologias', TransferenciaTecnologiaController::class);
 

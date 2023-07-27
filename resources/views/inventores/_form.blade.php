@@ -1,4 +1,5 @@
-<form class="row g-3 pt-5" action="{{ isset($info) ? route('inventores.update', $info->id) : route('inventores.store') }}"
+
+<form class="row g-3 pt-5" action="{{ isset($info) ? route('inventores.update', $info->id) : route('inventores.store', $objeto->id) }}"
       method="POST">
     @csrf
     @isset($info)
@@ -6,6 +7,7 @@
     @endisset
 
     <!-- Campos do formulário -->
+        <input type="hidden" name="objetoPI_id" value="{{$objeto->id}}">
 
     <div class="form-group col-12">
         <div class="form-floating mb-3">
@@ -209,6 +211,8 @@
             <label for="link_lattes" class="text-black">{{$info->link_lattes ?? "Link do Lattes"}}</label>
         </div>
     </div>
+
+
 
     <!-- Botão de envio -->
     <div class="text-center mb-5">

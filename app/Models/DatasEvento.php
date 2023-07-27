@@ -17,4 +17,9 @@ class DatasEvento extends Model
         'primeira_publicacao',
         'primeira_apresentacao',
     ];
+
+    public function objetoPI()
+    {
+        return $this->belongsTo(ObjetoPI::class, 'objetoPI_id');
+    }
 }

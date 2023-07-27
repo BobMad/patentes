@@ -14,4 +14,9 @@ class TransferenciaTecnologia extends Model
         'interesses',
 
     ];
+
+    public function objetoPI()
+    {
+        return $this->belongsTo(ObjetoPI::class, 'objetoPI_id');
+    }
 }

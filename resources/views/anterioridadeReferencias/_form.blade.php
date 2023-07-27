@@ -1,5 +1,5 @@
 <form
-    action="{{ isset($info) ? route('anterioridadeReferencias.update', $info->id) : route('anterioridadeReferencias.store') }}"
+    action="{{ isset($info) ? route('anterioridadeReferencias.update', $info->id) : route('anterioridadeReferencias.store', $objeto->id) }}"
     method="POST">
     @csrf
     @isset($info)

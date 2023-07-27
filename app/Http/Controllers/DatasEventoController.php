@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DatasEvento;
+use App\Models\ObjetoPI;
 use Illuminate\Http\Request;
 
 class DatasEventoController extends Controller
@@ -18,19 +19,19 @@ class DatasEventoController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(ObjetoPI $objeto)
     {
-        return view('dataEventos.create');
+        return view('dataEventos.create', compact('objeto'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ObjetoPI $objeto, Request $request)
     {
-        $info = DatasEvento::create($request->all());
+        $info = $objeto->datas()->create($request->all());
 
-        return to_route('dataEventos.show', $info->id);
+        return to_route('objetoPIs.show', $info->objetoPI_id);
     }
 
     /**

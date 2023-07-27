@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('anterioridade_referencias', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('objetoPI_id')->constrained('objeto_p_i_s')->onDelete('cascade');
             $table->string('outro_invento');
             $table->string('patente_similar');
             $table->string('relacao_bibliografica');

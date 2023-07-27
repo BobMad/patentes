@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('datas_eventos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('objetoPI_id')->constrained('objeto_p_i_s')->onDelete('cascade');
             $table->string('concepcao');
             $table->string('croquis_desenhos');
             $table->string('primeira_descricao');

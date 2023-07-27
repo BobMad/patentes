@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\InformacaoInvento;
+use App\Models\ObjetoPI;
 use Illuminate\Http\Request;
 
 class InformacaoInventoController extends Controller
@@ -18,19 +19,19 @@ class InformacaoInventoController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(ObjetoPI $objeto)
     {
-        return view('inventoInformacoes.create');
+        return view('inventoInformacoes.create', compact('objeto'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ObjetoPI $objeto, Request $request)
     {
-        $info = InformacaoInvento::create($request->all());
+        $info = $objeto->infoInvento()->create($request->all());
 
-        return to_route('inventoInformacoes.show', $info->id);
+        return to_route('objetoPIs.show', $info->objetoPI_id);
     }
 
     /**

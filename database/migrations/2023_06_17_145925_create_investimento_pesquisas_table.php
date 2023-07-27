@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('investimento_pesquisas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('objetoPI_id')->constrained('objeto_p_i_s')->onDelete('cascade');
             $table->string('orgaos');
             $table->string('contrato_termo');
             $table->string('foi_informado');

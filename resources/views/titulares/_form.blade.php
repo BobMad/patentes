@@ -1,4 +1,6 @@
-<form class="row g-3 pt-5" action="{{ isset($titular) ? route('titulares.update', $titular->id) : route('titulares.store') }}"
+
+
+<form class="row g-3 pt-5" action="{{ isset($titular) ? route('titulares.update', $titular->id) : route('titulares.store', $objeto->id) }}"
       method="POST">
     @csrf
     @isset($titular)

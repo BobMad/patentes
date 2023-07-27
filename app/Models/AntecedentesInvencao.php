@@ -13,4 +13,9 @@ class AntecedentesInvencao extends Model
         'diferencial',
         'diferencial_patentes',
     ];
+
+    public function objetosPI()
+    {
+        return $this->belongsTo(ObjetoPI::class, 'objetoPI_id');
+    }
 }

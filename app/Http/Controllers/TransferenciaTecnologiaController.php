@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ObjetoPI;
 use App\Models\TransferenciaTecnologia;
 use Illuminate\Http\Request;
 
@@ -18,19 +19,19 @@ class TransferenciaTecnologiaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(ObjetoPI $objeto)
     {
-        return view('transferenciaTecnologias.create');
+        return view('transferenciaTecnologias.create', compact('objeto'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ObjetoPI $objeto, Request $request)
     {
-        $info = TransferenciaTecnologia::create($request->all());
+        $info = $objeto->transferencias()->create($request->all());
 
-        return to_route('transferenciaTecnologias.show', $info->id);
+        return to_route('objetoPIs.show', $info->objetoPI_id);
     }
 
     /**

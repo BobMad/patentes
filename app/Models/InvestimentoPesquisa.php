@@ -15,4 +15,9 @@ class InvestimentoPesquisa extends Model
         'foi_informado',
         'suporte_interno',
     ];
+
+    public function objetoPI()
+    {
+        return $this->belongsTo(ObjetoPI::class, 'objetoPI_id');
+    }
 }

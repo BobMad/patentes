@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('representantes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('objetoPI_id')->constrained('objeto_p_i_s')->onDelete('cascade');
             $table->string('nome');
             $table->string('rg');
             $table->string('cpf');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inventor;
+use App\Models\ObjetoPI;
 use Illuminate\Http\Request;
 
 class InventorController extends Controller
@@ -18,19 +19,22 @@ class InventorController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(ObjetoPI $objeto)
     {
-        return view('inventores.create');
+
+        return view('inventores.create', compact('objeto'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ObjetoPI $objeto, Request $request)
     {
-        $info = Inventor::create($request->all());
 
-        return to_route('inventores.show',$info->id);
+        $info = $objeto->inventores()->create($request->all());
+        $info->endereco()->create($request->all());
+
+        return to_route('objetoPIs.show', $info->objetoPI_id);
     }
 
     /**

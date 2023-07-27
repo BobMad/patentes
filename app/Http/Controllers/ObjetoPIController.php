@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ObjetoPI;
+use Carbon\Carbon;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
@@ -42,11 +43,12 @@ class ObjetoPIController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(ObjetoPI $objetos, string $id): View|Application|Factory
     {
         $objeto = ObjetoPI::query()->find($id);
 
-        return view('objetoPIs.show', compact('objeto'));
+
+        return view('objetoPIs.show', compact('objeto', 'objetos'));
     }
 
     /**

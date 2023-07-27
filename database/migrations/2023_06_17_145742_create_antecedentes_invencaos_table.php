@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('antecedentes_invencaos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('objetoPI_id')->constrained('objeto_p_i_s')->onDelete('cascade');
             $table->string('diferencial')->nullable();
             $table->string('diferencial_patentes')->nullable();
             $table->timestamps();

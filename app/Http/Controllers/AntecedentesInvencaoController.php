@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AntecedentesInvencao;
+use App\Models\ObjetoPI;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
@@ -21,19 +22,19 @@ class AntecedentesInvencaoController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): View|Application|Factory
+    public function create(ObjetoPI $objeto): View|Application|Factory
     {
-        return view('antecedentesInvencao.create');
+        return view('antecedentesInvencao.create', compact('objeto'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ObjetoPI $objeto, Request $request)
     {
-        $info = AntecedentesInvencao::create($request->all());
+        $info = $objeto->antecedentes()->create($request->all());
 
-        return to_route('antecedentesInvencao.show', $info->id);
+        return to_route('objetoPIs.show', $info->objetoPI_id);
     }
 
     /**
