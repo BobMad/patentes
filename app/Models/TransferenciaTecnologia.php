@@ -12,6 +12,7 @@ class TransferenciaTecnologia extends Model
     protected $fillable = [
         'potencial_comercializacao',
         'interesses',
+        'objetoPI_id'
 
     ];
 

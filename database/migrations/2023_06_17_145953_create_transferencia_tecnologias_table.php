@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('transferencia_tecnologias', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('objetoPI_id')->constrained('objeto_p_i_s')->onDelete('cascade');
+            $table->foreignId('objetoPI_id')->nullable()->constrained('objeto_p_i_s')->onDelete('cascade');
             $table->string('potencial_comercializacao');
             $table->string('interesses');
             $table->timestamps();

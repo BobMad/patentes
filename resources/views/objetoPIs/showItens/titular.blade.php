@@ -1,4 +1,4 @@
-
+@isset($objeto->titulares)
 <div class="accordion mb-3" id="accordionPanelsStayOpenExample">
     <div class="accordion-item">
         <h2 class="accordion-header">
@@ -64,3 +64,4 @@
 
     </div>
 </div>
+@endisset

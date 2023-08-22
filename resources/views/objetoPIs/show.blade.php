@@ -57,7 +57,7 @@
     @include('objetoPIs.showItens.datas')
     @include('objetoPIs.showItens.anterioridade')
     @include('objetoPIs.showItens.investimentos')
-    @include('objetoPIs.showItens.transferencia')
+
 
 
 
@@ -65,9 +65,7 @@
 @endsection
 
 @section('content-left')
-    <div class="pt-5"></div>
-    <div class="pt-5"></div>
-    <div class="pt-3"></div>
+
     <section class="m-1 pt-5">
         <div class="card">
             <div class="card-header">
@@ -114,11 +112,7 @@
                        href="{{route('investimentoPesquisas.create', $objeto->id)}}">Investimentos na
                         Pesquisa</a>
                 </div>
-                <div class="card-text mb-3 text-end">
-                    <a class="btn btn-outline-info"
-                       href="{{route('transferenciaTecnologias.create', $objeto->id)}}">Transferência de
-                        Tecnologia</a>
-                </div>
+
             </div>
         </div>
     </section>

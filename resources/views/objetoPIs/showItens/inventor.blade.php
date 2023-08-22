@@ -1,4 +1,4 @@
-
+@isset($objeto->inventores)
 {{--INVENTOR--}}
 <form class="row">
 <div class="accordion mb-3" id="accordionPanelsStayOpenExample">
@@ -102,3 +102,4 @@
     </div>
 </div>
 </form>
+@endisset

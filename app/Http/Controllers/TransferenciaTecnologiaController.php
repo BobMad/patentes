@@ -21,7 +21,8 @@ class TransferenciaTecnologiaController extends Controller
      */
     public function create(ObjetoPI $objeto)
     {
-        return view('transferenciaTecnologias.create', compact('objeto'));
+        $objetos = ObjetoPI::all();
+        return view('transferenciaTecnologias.create', compact('objeto', 'objetos'));
     }
 
     /**
@@ -29,9 +30,10 @@ class TransferenciaTecnologiaController extends Controller
      */
     public function store(ObjetoPI $objeto, Request $request)
     {
+        $objetos = ObjetoPI::all();
         $info = $objeto->transferencias()->create($request->all());
 
-        return to_route('objetoPIs.show', $info->objetoPI_id);
+        return to_route('objetoPIs.show', $info->objetoPI_id, compact('objetos'));
     }
 
     /**
