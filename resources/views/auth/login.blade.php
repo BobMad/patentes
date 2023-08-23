@@ -6,27 +6,31 @@
     <div class="card m-5 p-5 content-center">
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-
+        <figure class="figure pt-3">
+            <img class="figure-img img-fluid rounded" src="{{asset('images/gfpi_img.png')}}" alt="GFPI">
+        </figure>
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('E-mail')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <div class="form-group col-12">
+            <div class="form-floating mb-3">
+                <input type="email" id="email" class="form-control bg-primary-subtle" name="email"
+                       :value="old('email')" required autofocus autocomplete="username"
+                       placeholder="E-mail"
+                    {{'required'}}>
+                <label for="email" class="text-black">E-mail</label>
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            </div>
         </div>
 
         <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Senha')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
+        <div class="form-floating mb-3">
+            <input type="password" id="password" class="form-control bg-primary-subtle" name="password"
+                   :value="old('email')" required autofocus autocomplete="username"
+                   placeholder="Senha"
+                {{'required'}}>
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            <label for="password" class="text-black">Senha</label>
         </div>
 
         <!-- Remember Me -->
@@ -37,15 +41,15 @@
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex">
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
+                <a class="" href="{{ route('password.request') }}">
                     {{ __('Esqueceu sua senha?') }}
                 </a>
             @endif
 
-            <div class="btn btn-outline-light text-white ms-4">
-                <button type="submit" >{{ __('Entrar') }}</button>
+            <div class="text-end">
+                <button class="btn btn-outline-light text-white " type="submit" >{{ __('Entrar') }}</button>
             </div>
         </div>
     </form>
