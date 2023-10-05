@@ -8,10 +8,12 @@ use App\Http\Controllers\InformacaoInventoController;
 use App\Http\Controllers\InventorController;
 use App\Http\Controllers\InvestimentoPesquisaController;
 use App\Http\Controllers\ObjetoPIController;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RepresentanteController;
 use App\Http\Controllers\TitutlarController;
 use App\Http\Controllers\TransferenciaTecnologiaController;
+use Codedge\Fpdf\Fpdf\Fpdf;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +48,8 @@ Route::middleware('auth')->group(callback: function () {
     Route::resource('objetoPiS/{objeto}/anterioridadeReferencias', AnterioridadeReferenciasController::class);
     Route::resource('objetoPiS/{objeto}/investimentoPesquisas', InvestimentoPesquisaController::class);
     Route::resource('transferenciaTecnologias', TransferenciaTecnologiaController::class);
+
+    Route::get('fpdf/{objeto}', [PdfController::class, 'index'])->name('pdf');
 
 });
 

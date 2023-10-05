@@ -24,6 +24,7 @@
                     <td>
                         <a href="{{route('objetoPIs.show', $objeto->id)}}"><button class="btn btn-outline-info">Detalhes</button></a>
                         <a href="{{route('objetoPIs.edit', $objeto->id)}}"><button class="btn btn-outline-warning">Editar</button></a>
+                        <a href="{{route('pdf', $objeto->id)}}"><button class="btn btn-outline-danger">PDF</button></a>
                     </td>
                 </tr>
             @endforeach

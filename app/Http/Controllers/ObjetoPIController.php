@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\ObjetoPI;
 use Carbon\Carbon;
+use Codedge\Fpdf\Fpdf\Fpdf;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
+/**
+ *
+ */
 class ObjetoPIController extends Controller
 {
     /**
@@ -50,6 +54,7 @@ class ObjetoPIController extends Controller
 
         return view('objetoPIs.show', compact('objeto', 'objetos'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
