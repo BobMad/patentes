@@ -16,7 +16,7 @@ use Dompdf\Dompdf;
 class PdfController extends Controller
 {
 
-    public function index($id)
+    /*public function index($id)
     {
         $objeto = ObjetoPI::query()->findOrFail($id);
         $representante = $objeto->representante;
@@ -35,6 +35,7 @@ class PdfController extends Controller
                  INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO AMAPÁ <br/>
                  CONSELHO SUPERIOR <br/>
                  <hr></div>
+
                  <div align="center">
                  <h3>ANEXO I</h3>
                 <h3>QUESTIONÁRIO DE PATENTEABILIDADE</h3></div>
@@ -44,8 +45,18 @@ class PdfController extends Controller
             ' </u>, RG: <u>' . $representante->rg . ' </u>, CPF: <u>' .
             $representante->cpf . ' </u>, de , <u>' . $representante->campus .
             ' </u>(Unidade/Campus) encaminho a esse Núcleo os documentos abaixo relacionados, a fim de dar início à avaliação de pertinência do <u> ' .
-            $representante->produto . ' </u> (produto, serviço, projeto,etc.) intitulado(a) “ ”.</p>'
+            $representante->produto . ' </u> (produto, serviço, projeto,etc.) intitulado(a) “ ”.</p>
 
+            Relação de documentos anexados:
+            1. Relatório Descritivo
+            2. Reivindicações
+            3. Resumo
+            4. Desenhos
+            5. Publicações relacionadas ao presente invento
+            6. Cópias de material de divulgação e/ou atestado de participação em eventos e/ou cópia de
+anais, onde o invento tenha sido divulgado.
+    Outros Documentos:
+'
 
         );
 
@@ -56,8 +67,7 @@ class PdfController extends Controller
         // Output the generated PDF to Browser
         $dompdf->stream($objeto->titulo);
 
-    }
-
+    }*/
 
     /*public function index($id)
     {
@@ -88,5 +98,11 @@ class PdfController extends Controller
         $pdf->Output();
     }*/
 
+    public function index($id)
+    {
+        $objeto = ObjetoPI::query()->findOrFail($id);
+
+        return view('objetoPis.pdf', compact('objeto'));
+    }
 
 }

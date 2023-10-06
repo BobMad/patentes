@@ -66,6 +66,9 @@ class ObjetoPI extends Model
         return $this->hasOne(TransferenciaTecnologia::class, 'objetoPI_id', 'id');
     }
 
+    /**
+     * @return HasOneThrough
+     */
     public function enderecoTitular(): HasOneThrough
     {
         return $this->hasOneThrough(
