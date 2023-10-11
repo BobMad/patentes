@@ -80,5 +80,17 @@ class ObjetoPI extends Model
             'id' // Local key on the cars table...
         );
     }
+
+    public function enderecoInventor(): HasOneThrough
+    {
+        return $this->hasOneThrough(
+            Endereco::class,
+            Inventor::class,
+            'objetoPI_id', // Foreign key on the cars table...
+            'inventor_id', // Foreign key on the owners table...
+            'id', // Local key on the mechanics table...
+            'id' // Local key on the cars table...
+        );
+    }
 }
 
