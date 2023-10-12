@@ -8,7 +8,7 @@
 
     @vite(['resources/css/app.css','resources/js/app.js', 'resources/js/bootstrap.js'])
 
-    <title>Document</title>
+    <title>GFPI</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">

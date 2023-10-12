@@ -30,12 +30,12 @@ class RepresentanteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ObjetoPI $objeto, Request $request): View|Factory|Application
+    public function store(ObjetoPI $objeto, Request $request): \Illuminate\Http\RedirectResponse
     {
         $representante = $objeto->representante()->create($request->all());
 //        $representante = Representante::create($request->all());
 
-        return view('objetoPIs.show', $representante->objetoPI_id);
+        return to_route('objetoPIs.show', $representante->objetoPI_id);
     }
 
     /**
